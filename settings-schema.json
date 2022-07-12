@@ -1,0 +1,168 @@
+{
+  "layout1": {
+    "type": "layout",
+    "pages": ["page1", "page2"],
+    "page1": {
+      "type": "page",
+      "title": "Settings",
+      "sections": ["section0", "section1"]
+    },
+    "page2": {
+      "type": "page",
+      "title": "Advanced",
+      "sections": ["section2", "section3", "section4"]
+    },
+    "section0": {
+      "type": "section",
+      "title": "Temperature display",
+      "keys": ["use-fahrenheit","only-integer","show-unit","show-unit-letter","show-label-prefix", "label-prefix"]
+    },
+    "section1": {
+      "type": "section",
+      "title": "Timers",
+      "keys": ["load-interval", "temp-interval"]
+    },
+    "section2": {
+      "type": "section",
+      "title": "Warnings",
+      "keys": ["change-color","only-colors"]
+    },
+    "section3": {
+      "type": "section",
+      "title": "Temperature thresholds",
+      "keys": ["thresholds"]
+    },
+    "section4": {
+      "type": "section",
+      "title": "Advanced",
+      "keys": ["debug"]
+    }
+  },
+  "use-fahrenheit": {
+    "type": "switch",
+    "default": false,
+    "description": "Show Fahrenheit"
+  },
+  "only-integer": {
+    "type": "switch",
+    "default": false,
+    "description": "Use integer values"
+  },
+  "show-unit": {
+    "type": "switch",
+    "default": true,
+    "description": "Show degree unit",
+    "tooltip": "Whether or not show the unit after the temperature value."
+  },
+  "show-unit-letter": {
+    "type": "switch",
+    "default": false,
+    "description": "Show unit letter",
+    "tooltip": "Whether or not show the unit letter (C or F).",
+    "dependency": "show-unit"
+  },
+  "show-label-prefix": {
+    "type": "switch",
+    "default": false,
+    "description": "Show label prefix",
+    "tooltip": "Whether or not to add a label before the temperature value."
+  },
+  "label-prefix": {
+    "type": "entry",
+    "default": "🌡",
+    "description": "Label prefix",
+    "tooltip": "The label to be shown before the temperature value.",
+    "dependency": "show-label-prefix"
+  },
+  "load-interval": {
+    "type": "spinbutton",
+    "default": 1000,
+    "min": 1000,
+    "max": 30000,
+    "step": 500,
+    "units": "ms",
+    "description": "CPU/RAM load:"
+  },
+  "temp-interval": {
+    "type": "spinbutton",
+    "default": 5000,
+    "min": 2000,
+    "max": 30000,
+    "step": 100,
+    "units": "ms",
+    "description": "Temperature:"
+  },
+  "change-color": {
+    "type": "switch",
+    "default": true,
+    "description": "Color change for High / Critical temp.",
+    "tooltip": "Selecting this option, this applet becomes\n orange when the High Temperature Threshold is reached,\n red when the Critical Temperature Threshold is reached."
+  },
+  "only-colors": {
+    "type": "switch",
+    "default": false,
+    "dependency": "change-color",
+    "description": "Only use colors as alert",
+    "tooltip": "Select this option to not display text alerts in horizontal panels.\n(No text alert is ever displayed on vertical panels.)"
+  },
+	"thresholds": {
+		"type": "custom",
+		"file": "settings.py",
+		"widget": "Thresholds",
+		"description": "CPU Temperature Thresholds"
+	},
+  "temp-default": {
+    "type": "generic",
+    "default": true,
+    "description": "default",
+    "tooltip": "Select default temperature thresholds for CPU warnings"
+  },
+  "temp-custom": {
+    "type": "generic",
+    "default": false,
+    "description": "custom",
+    "tooltip": "Select custom temperature thresholds for CPU warnings"
+  },
+  "high": {
+    "type": "generic",
+    "min": 45,
+    "max": 90,
+    "default": 55,
+    "step": 0.1,
+    "description": "High CPU temperature",
+    "tooltip": "High CPU temperature"
+  },
+  "crit": {
+    "type": "generic",
+    "min": 60,
+    "max": 130,
+    "default": 70,
+    "step": 0.5,
+    "description": "Critical CPU temperature",
+    "tooltip": "Critical CPU temperature"
+  },
+  "color-high": {
+    "type": "generic",
+    "default": "rgba(195,170,10, 1)",
+    "description": "high temp",
+    "tooltip": "Select high temperature color for CPU warnings"
+  },
+  "color-crit": {
+    "type": "generic",
+    "default": "rgba(255,25,10, 1)",
+    "description": "critical temp",
+    "tooltip": "Select critical temperature color for CPU warnings"
+  },
+  "buttons-type": {
+    "type": "generic",
+    "default": true,
+    "description": "Buttons type",
+    "tooltip": "Enable this to display old-style radio buttons instead of toggle buttons"
+  },
+  "debug": {
+    "type": "switch",
+    "default": false,
+    "description": "Debug mode",
+    "tooltip": "Enable this to check CPU temperature colors change"
+  }
+}

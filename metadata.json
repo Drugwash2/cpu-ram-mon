@@ -1,0 +1,17 @@
+{
+  "uuid": "cpu-ram-mon@drugwash",
+  "name": "CPU+RAM monitor",
+  "version": "1.0.0",
+  "description": "Shows CPU load, CPU temperature, and RAM load",
+  "cinnamon-version": [
+    "3.6",
+    "3.8",
+    "4.0",
+    "4.2",
+    "4.4",
+    "4.6"
+  ],
+  "author": "Drugwash",
+  "contributors": "ariel, fevimu",
+  "last-edited": 1658949854
+}
