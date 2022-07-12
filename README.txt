@@ -1,6 +1,6 @@
 CPU+RAM Monitor applet
 Drugwash, 2022
-Licence: GPL v3.0
+Licence: GPL v2 or later
 
 This applet is a combination between:
 - temperature@fevimu
