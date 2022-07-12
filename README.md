@@ -9,12 +9,13 @@ This applet is a combination between:
 It is meant to be used with a Cinnamon Desktop.
 Panel height should be enough to hold three lines of text.
 
+![CpuRamMon10](https://user-images.githubusercontent.com/29117024/178415597-7814efae-b4bc-4618-a796-ac3caa878247.png)
 
 
 Display is as follows:
-CPU usage [%]
-CPU temperature [°C or F]
-RAM usage [GB]
+- CPU usage [%]
+- CPU temperature [°C or F]
+- RAM usage [GB]
 
 
 
